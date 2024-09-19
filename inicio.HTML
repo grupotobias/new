@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobias Jewelry</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"> <!-- Enlace a la librería AOS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f4f8; /* Fondo blanco azuláceo */
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centra verticalmente el contenido */
+            height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            position: absolute;
+            top: 20px; /* Espacio desde el borde superior */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10; /* Asegura que esté sobre el contenido */
+        }
+
+        .header img {
+            max-width: 150px; /* Tamaño grande del logo */
+            height: auto;
+            animation: zoomBounce 3s ease-in-out infinite; /* Animación de zoom y rebote */
+        }
+
+        .hero {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .welcome-message, 
+        .hero h1, 
+        .button {
+            color: #3a5f40; /* Verde oliva */
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.5s ease-in-out; /* Animación de entrada */
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin: 10px 0;
+            animation: fadeInUp 2s ease-in-out; /* Animación de entrada */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 45px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #3a5f40; /* Color de texto verde oliva */
+            background: none; /* Sin fondo */
+            border: 2px solid #3a5f40; /* Borde verde oliva */
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+            animation: slideUp 1s ease-out forwards; /* Animación de deslizamiento */
+        }
+
+        .button span {
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background: #3a5f40; /* Fondo verde oliva en hover */
+            color: #fff; /* Color de texto blanco en hover */
+            transform: scale(1.1);
+        }
+
+        @keyframes zoomBounce {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+            50% {
+                transform: scale(1.2) translateY(-20px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px); /* Empieza desde 50px abajo */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Termina en su posición original */
+            }
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #2f4f4f; /* Fondo verde oliva oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader::before {
+            content: '';
+            border: 10px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 10px solid #fff;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .corner-link {
+            position: absolute;
+            bottom: 20px; /* Ajusta según sea necesario */
+            right: 20px; /* Ajusta según sea necesario */
+            font-size: 30px; /* Tamaño del emoji */
+            color: #3a5f40; /* Verde oliva */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .corner-link:hover {
+            color: #2a4b32; /* Color de texto en hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div> <!-- Spinner de carga -->
+    
+    <header class="header">
+        <img src="images/copia.png" alt="Logo Tobias Jewelry">
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <p class="welcome-message" data-aos="fade-up">WELCOME</p>
+            <h1 data-aos="fade-up">TOBIAS JEWELRY</h1>
+            <a href="catalogo.html" class="button" id="shop-now" data-aos="fade-up">
+                <span>👉</span> Discover Our Collection
+            </a>
+        </div>
+    </main>
+
+    <a href="index.html" class="corner-link" id="logout">💎</a> <!-- Emoji de diamante como botón -->
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> <!-- Script de AOS -->
+    <script>
+        AOS.init(); // Inicializa AOS
+
+        document.getElementById('shop-now').addEventListener('click', function(e) {
+            e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+            document.body.classList.add('fade-out'); // Añade la clase de animación de desvanecimiento
+
+            setTimeout(() => {
+                window.location.href = this.href; // Redirige después de la animación
+            }, 500); // Tiempo igual al de la transición CSS
+        });
+
+        document.getElementById('logout').addEventListener('click', function(e) {
+            e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+            document.body.classList.add('fade-out'); // Añade la clase de animación de desvanecimiento
+
+            setTimeout(() => {
+                window.location.href = this.href; // Redirige después de la animación
+                history.pushState(null, null, location.href); // Desactiva el retroceso
+                window.onpopstate = function() {
+                    history.go(1);
+                };
+            }, 3000); // Tiempo de 3 segundos
+        });
+
+        window.addEventListener('load', () => {
+            document.querySelector('.loader').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Industrias Tobias</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            animation: floatLogo 3s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .menu-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 80vw;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            justify-content: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-item {
+            padding: 15px;
+            text-decoration: none;
+            color: #3a5f40;
+            background-color: rgba(58, 95, 64, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        .menu-item:hover {
+            background-color: #3a5f40;
+            color: #ffffff;
+        }
+
+        .user-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .user-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                width: 95%;
+                padding: 10px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="copia.png" alt="Logo de la Empresa" class="logo">
+
+    <div class="menu-container">
+        <a href="agregar-producto.html" class="menu-item">Agregar Producto</a>
+        <a href="buscar-producto.html" class="menu-item">Buscar Producto</a>
+        <a href="eliminar-producto.html" class="menu-item">Eliminar Producto</a>
+        <a href="actualizar-producto.html" class="menu-item">Actualizar Producto</a>
+        <a href="ver-inventario.html" class="menu-item">Ver Inventario</a>
+        <a href="gestionar-proveedores.html" class="menu-item">Gestión de Proveedores</a>
+        <a href="reportes-inventario.html" class="menu-item">Generar Reportes</a>
+        <a href="alertas-stock.html" class="menu-item">Alertas de Stock Bajo</a>
+    </div>
+
+    <div class="user-icon" onclick="cerrarSesion()">
+        <img src="usuario.jpg" alt="Icono de Usuario">
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem('loggedIn');
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000);
+        }
+
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+
+        window.addEventListener('popstate', function(event) {
+            window.history.forward();
+        });
+        window.history.forward();
+    </script>
+</body>
+</html>

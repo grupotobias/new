@@ -1,0 +1,115 @@
+/* Estilos generales para el body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc; /* Color de fondo beige claro */
+}
+
+/* Estilos para el encabezado */
+.header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos generales para el catálogo */
+.catalog {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5dc; /* Color de fondo beige claro */
+}
+
+.catalog-title {
+    font-size: 36px; /* Tamaño del texto del título */
+    color: #556b2f; /* Color verde oliva */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra para el efecto 3D */
+    transform: perspective(500px) rotateX(10deg); /* Efecto 3D en el título */
+    display: inline-block; /* Para que el efecto de transform se aplique correctamente */
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaciado entre productos */
+    justify-content: center; /* Centra los productos en el contenedor */
+}
+
+.product {
+    border: 1px solid #ddd; /* Borde alrededor del producto */
+    border-radius: 8px; /* Esquinas redondeadas */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    width: 250px; /* Ancho fijo para los productos */
+    text-align: center; /* Centra el texto */
+    background-color: #fff; /* Color de fondo de los productos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el producto */
+}
+
+.product img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-bottom: 1px solid #ddd; /* Borde inferior para separar la imagen del texto */
+}
+
+.product h2 {
+    font-size: 18px;
+    color: #333; /* Color del texto */
+    margin: 10px 0; /* Espaciado alrededor del título */
+}
+
+.product p {
+    font-size: 14px;
+    color: #666; /* Color del texto */
+    margin: 0 0 10px 0; /* Espaciado en el párrafo */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff; /* Color del botón */
+    text-decoration: none;
+    border-radius: 5px; /* Esquinas redondeadas del botón */
+    margin-bottom: 10px; /* Espaciado debajo del botón */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+}
+
+/* Estilos para el footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8; /* Color de fondo del footer */
+    text-align: center; /* Centra el texto y los enlaces */
+    padding: 10px 0; /* Espaciado en el footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para resaltar el footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Espaciado entre el texto y los enlaces */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #333; /* Color del texto */
+}
+
+.footer .social-media {
+    margin-top: 5px; /* Espaciado encima de los enlaces de redes sociales */
+}
+
+.footer .social-media a {
+    margin: 0 10px; /* Espaciado entre los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    color: #007bff; /* Color de los enlaces */
+    font-size: 14px; /* Tamaño de la fuente de los enlaces */
+}
+
+.footer .social-media a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}

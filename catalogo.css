@@ -1,0 +1,88 @@
+/* styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #D9EAD3; /* Beige suave */
+    margin: 0;
+    color: #333;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+}
+
+.header img {
+    max-width: 100px;
+    height: auto;
+}
+
+.catalog {
+    padding: 20px;
+    text-align: center;
+}
+
+.product {
+    margin-bottom: 20px;
+}
+
+.product img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 36px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(51, 51, 51, 0.9);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background: rgba(51, 51, 51, 1);
+    transform: scale(1.05);
+}
+
+.footer {
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .social-media {
+    margin-top: 1rem;
+}
+
+.footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.footer .social-media a:hover {
+    text-decoration: underline;
+}
